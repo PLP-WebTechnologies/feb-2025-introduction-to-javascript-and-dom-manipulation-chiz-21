@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GreenGrow Solutions</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">GreenGrow</div>
+            <ul class="nav-links">
+                <li><a href="#" class="active">Home</a></li>
+                <li><a href="#">Practices</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Innovating Sustainable Agriculture</h1>
+                <p>Explore eco-friendly tools, organic solutions, and smart farming techniques.</p>
+                <button id="theme-toggle">Toggle Eco Mode</button>
+            </div>
+        </section>
+
+        <section class="products">
+            <h2>Featured Tools & Solutions</h2>
+            <div class="product-grid" id="product-container">
+                <div class="product-card">
+                    <h3>Solar-Powered Irrigation</h3>
+                    <p>Eco-friendly irrigation system using renewable energy</p>
+                    <button class="details-btn">Learn More</button>
+                </div>
+                <div class="product-card">
+                    <h3>Compost Kit</h3>
+                    <p>Turn waste into nutrient-rich compost for healthy soil</p>
+                    <button class="details-btn">Learn More</button>
+                </div>
+                <div class="product-card">
+                    <h3>Smart Soil Sensor</h3>
+                    <p>Monitor moisture, pH, and nutrients in real-time</p>
+                    <button class="details-btn">Learn More</button>
+                </div>
+            </div>
+            <button id="add-product">Add New Solution</button>
+        </section>
+
+        <section class="features">
+            <h2>Why Choose GreenGrow</h2>
+            <div class="features-container">
+                <div class="feature">
+                    <h3>Agri-Tech Support</h3>
+                    <p>Expert guidance in sustainable farming technologies</p>
+                </div>
+                <div class="feature">
+                    <h3>Fast & Green Delivery</h3>
+                    <p>Carbon-neutral shipping for all orders</p>
+                </div>
+                <div class="feature" id="warranty-feature">
+                    <h3>Eco Warranty</h3>
+                    <p>Our tools come with a 2-year eco-care plan</p>
+                    <button id="warranty-btn">Extend Coverage</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 GreenGrow Solutions. All rights reserved.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
+<script>
+    // JavaScript for theme toggle
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
+
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('eco-mode');
+        themeToggle.textContent = body.classList.contains('eco-mode') ? 'Disable Eco Mode' : 'Enable Eco Mode';
+    });
+
+    // JavaScript for adding new product
+    const addProductBtn = document.getElementById('add-product');
+    const productContainer = document.getElementById('product-container');
+
+    addProductBtn.addEventListener('click', () => {
+        const newProductCard = document.createElement('div');
+        newProductCard.className = 'product-card';
+        newProductCard.innerHTML = `
+            <h3>New Eco Product</h3>
+            <p>Description of the new eco-friendly product.</p>
+            <button class="details-btn">Learn More</button>
+        `;
+        productContainer.appendChild(newProductCard);
+    });
+
+    // JavaScript for warranty feature
+    const warrantyBtn = document.getElementById('warranty-btn');
+    warrantyBtn.addEventListener('click', () => {
+        alert('Warranty coverage extended for another year!');
+    });
